@@ -15,7 +15,7 @@ export const runEvents = async ({
     /** Общие команды */
     case Start:
     case Start + botName:
-      await startBotFeature({ bot, chatId });
+      await startBotFeature({ bot, chatId, message });
       return;
     case Quote:
     case Quote + botName:
