@@ -4,7 +4,6 @@ import { config } from 'dotenv';
 import { runEvents } from './features';
 import { commandPalette } from './constants/commandPalette';
 import { runScheduledEvents } from './features/runScheduledEvents';
-import { handleUser } from './features/handleUser';
 import { runAdminEvents } from './features/runAdminEvents';
 
 config();
@@ -19,12 +18,12 @@ const startBot = async (): Promise<void> => {
   await bot.setMyCommands(commandPalette);
 
   // Обработка сообщений
-  await bot.on('message', async (message) => {
+  bot.on('message', async (message) => {
     console.log(message);
 
-    await handleUser({ bot, message });
     await runEvents({ bot, chatId: message.chat.id, message });
     await runAdminEvents({ bot, chatId: message.chat.id, message });
+
     return null;
   });
 

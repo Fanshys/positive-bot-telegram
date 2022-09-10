@@ -1,7 +1,7 @@
 import * as cron from 'node-cron';
 import * as TelegramBotApi from 'node-telegram-bot-api';
 import { wednesdayCron } from '../../constants/constants';
-import { UsersModel } from '../../models/users';
+import { UsersModel } from '../../models';
 import { sendPositiveQuote } from '../sendPositiveQuote';
 
 export const wednesdayFeature = (bot: TelegramBotApi): void => {
