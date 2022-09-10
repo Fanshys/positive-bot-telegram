@@ -12,10 +12,7 @@ export const runAdminEvents = async ({
 
   if (text.charAt(0) !== '/') return;
 
-  if (!user.isAdmin) {
-    bot.sendMessage(chatId, 'У вас нет прав на добавление.');
-    return;
-  }
+  if (!user.isAdmin) return;
 
   if (text.includes(AddQuote)) {
     await addQuote({ bot, chatId, message });
