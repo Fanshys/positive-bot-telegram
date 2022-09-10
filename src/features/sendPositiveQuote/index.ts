@@ -1,0 +1,1 @@
+export { sendPositiveQuote } from './sendPositiveQuote';

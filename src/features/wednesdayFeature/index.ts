@@ -1,0 +1,1 @@
+export { wednesdayFeature } from './wednesdayFeature';
