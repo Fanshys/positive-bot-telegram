@@ -1,2 +1,2 @@
 export const botName = '@PositiffchikBot';
-export const wednesdayCron = '0 11 14 * * 6';
+export const wednesdayCron = '0 0 10 * * 3';
