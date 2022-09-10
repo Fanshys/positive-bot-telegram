@@ -1,10 +1,10 @@
 import { Message } from 'node-telegram-bot-api';
 import { UsersModel } from '../../models';
-import { FeatureInterface } from '../types';
 import { arleadyRegisteredMessage, successMessage } from './constants';
 import { registerUser } from './helpers';
+import { StartBotFeatureArgs } from './types';
 
-export const startBotFeature = async ({ bot, chatId, message }: FeatureInterface): Promise<Message> => {
+export const startBotFeature = async ({ bot, chatId, message }: StartBotFeatureArgs): Promise<Message> => {
   const user = await UsersModel.findOne({ id: message.from.id });
 
   if (user) {
