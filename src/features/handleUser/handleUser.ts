@@ -7,7 +7,7 @@ export const handleUser = async ({ message }: HandleUserArgs): Promise<void> => 
   const {
     username, first_name, last_name, id,
   } = message.from;
-  const user = await UsersModel.findOne({ username });
+  const user = await UsersModel.findOne({ id });
 
   if (user) return;
 

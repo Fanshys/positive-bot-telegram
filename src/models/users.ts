@@ -3,7 +3,7 @@ import { Document, model, Schema } from 'mongoose';
 export interface UserModel extends Document {
   id: number;
   firstName: string;
-  username: string;
+  username?: string;
   lastName?: string;
   isAdmin?: boolean;
 }
@@ -23,7 +23,7 @@ const userSchema = new Schema<UserModel>({
   },
   username: {
     type: String,
-    required: true,
+    required: false,
   },
   isAdmin: {
     type: Boolean,
